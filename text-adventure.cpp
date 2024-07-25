@@ -24,7 +24,7 @@ A -- B1 - C1 - D1 - END1
                             - D2
                        - C4
              - D1
-   - B2 - C3 - D1 - E3 - END_HAPPY
+   - B2 - C3 - D4 - E3 - END_HAPPY
                        - A
                   - E4 - C1
                        - C2
@@ -53,14 +53,72 @@ int main() {
   std::cout << "Let's start our journey! It all began with the EVENT A.\n\n";
 
   while (choice != 1000 && choice != -1) {
-    std::cout << "\n";
+    std::cout << "\n[ " << path << " ]\n";
+    std::cout << "LIFES: " << lifes << "\n\n";
     if (branch == "A") {
-      std::cout << "[ " << path << " ]\n";
-      std::cout << "LIFES: " << lifes << "\n\n";
-
       std::cout << "1) EVENT B1\n";
       std::cout << "2) EVENT B2\n";
-    } else if (branch == "B1") {}
+    } else if (branch == "B1") {
+      std::cout << "1) EVENT C1\n";
+      std::cout << "2) EVENT C2\n";
+    } else if (branch == "B2") {
+      std::cout << "1) EVENT C3\n";
+      std::cout << "2) EVENT C4\n";
+    } else if (branch == "C1") {
+      std::cout << "1) EVENT D1\n";
+      std::cout << "2) EVENT D3\n";
+    } else if (branch == "C2") {
+      std::cout << "1) EVENT D2\n";
+      std::cout << "2) EVENT D1\n";
+    } else if (branch == "C3") {
+      std::cout << "1) EVENT D1\n";
+      std::cout << "2) EVENT D2\n";
+    } else if (branch == "C4") {
+      std::cout << "1) EVENT D3\n";
+      std::cout << "2) EVENT B1\n";
+    }  else if (branch == "D1") {
+      std::cout << "1) LIFE OR DEATH EVENT\n";  // END1
+      std::cout << "2) LIFE OR DEATH EVENT\n";  // 
+    } else if (branch == "D2") {
+      std::cout << "1) EVENT E1\n";
+      std::cout << "2) EVENT E2\n";
+    } else if (branch == "D3") {
+      std::cout << "1) EVENT E2\n";
+      std::cout << "2) EVENT E5\n";
+    } else if (branch == "D4") {
+      std::cout << "1) EVENT E3\n";
+      std::cout << "2) EVENT E4\n";
+    } else if (branch == "E1") {
+      std::cout << "1) EVENT F1\n";
+      std::cout << "2) EVENT C3\n";
+    } else if (branch == "E2") {
+      std::cout << "1) EVENT F2\n";
+      std::cout << "2) EVENT C4\n";
+    } else if (branch == "E3") {
+      std::cout << "1) LIFE OR DEATH EVENT\n";  // END_HAPPY
+      std::cout << "2) LIFE OR DEATH EVENT\n";  // A - BEGINNING
+    } else if (branch == "E4") {
+      std::cout << "1) EVENT C1\n";
+      std::cout << "2) EVENT C2\n";
+    } else if (branch == "F1") {
+      std::cout << "1) EVENT G1\n";
+      std::cout << "2) EVENT G2\n";
+    } else if (branch == "F2") {
+      std::cout << "1) EVENT G3\n";
+      std::cout << "2) EVENT D2\n";
+    } else if (branch == "G1") {
+      std::cout << "1) LIFE OR DEATH EVENT\n";  // END3
+      std::cout << "2) LIFE OR DEATH EVENT\n";  // C2
+    } else if (branch == "G2") {
+      std::cout << "1) EVENT C3\n";
+      std::cout << "2) EVENT C1\n";
+    } else if (branch == "G3") {
+      std::cout << "1) LIFE OR DEATH EVENT\n";  //END5
+      std::cout << "2) LIFE OR DEATH EVENT\n";  //END4
+    } else {
+      std::cout << "ERROR: you're walking in an unexistent path!!!\n";
+      return -1;
+    }
 
 
 
@@ -145,6 +203,11 @@ int main() {
             branch = "E2";
           else
             branch = "E5";
+        } else if (branch == "D4") {
+          if (choice == 1)
+            branch = "E3";
+          else
+            branch = "E4";        
         } else if (branch == "E1") {
           if (choice == 1)
             branch = "F1";
