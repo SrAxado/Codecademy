@@ -1,6 +1,9 @@
 # Codecademy
-Codecademy Projects - Javascript
+Codecademy Projects - C++
 
-These are some code projects from the Codecademy's Javascript course that I saved either for future reference or because I found them interesting and that probably demanded an extra bit of attention.
+This is a full working version of the Tic-Tac-Toe project!!!
 
-Hope they either help you or you enjoy them!!
+Tic-Tac-Toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical or diagonal row wins the game.
+
+
+Hope they either help you or you enjoy it!!
