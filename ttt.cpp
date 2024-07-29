@@ -9,7 +9,7 @@
 #include <cctype>
 #include "board.hpp"
 
-char board[3][3];
+char board[3][3]; // = {'O', 'X', 'X', 'O', 'X', ' '};
 const int PLAYER1 = 1;
 const int PLAYER2 = 2;
 
@@ -32,39 +32,70 @@ bool check_answer(int column) {
 }
 
 
-void ask_play(int player_turn) {
+void ask_play(int player_turn, int play[2]) {
   char row;
   int column;
 
-  std::cout << "PLAYER"<< player_turn << " enter the row of your play [A - C]: ";
+  std::cout << "--- PLAYER"<< player_turn << " ---\n";
   do {
-    std::cin >> row;
-    row = toupper(row);
-  } while (!check_answer(row));  
+    std::cout << "Enter the row of your play [A - C]: ";
+    do {
+        std::cin >> row;
+        row = toupper(row);
+    } while (!check_answer(row));
+
+    std::cout << "Enter the column of your play [1 - 3]: ";
+    do {
+        std::cin >> column;
+    } while (!check_answer(column));
+
+    if (row == 'A') {
+        play[0] = 0;
+    } else if (row == 'B') {
+        play[0] = 1;
+    } else {
+        play[0] = 2;
+    }
+    play[1] = column - 1;
+
+  } while (!insert_play(player_turn, play, board));
 
 }
 
 
 int main() {
-  bool win = false;
-  int player_turn = PLAYER1;
+  int player_turn;
+  int turn = 0;
+  int play[2];
 
-  reset_board(board);
+  reset_board(board, ' ');
+  print_board(board);
 
-  while (!win) {
+  do {
+    turn++;
+    //std::cout << "### TURN " << turn << "\n";
+    
+    if (!player_turn) {
+      player_turn = PLAYER1;
+    } else {
+      player_turn = (player_turn == PLAYER1 ? PLAYER2 : PLAYER1); // swap player
+    }    
+
+    ask_play(player_turn, play);
     print_board(board);
-    ask_play(player_turn);
 
-    win = true;
-  }
+    if (check_win(player_turn, board)) {
+      turn = 0;
+      break;
+    }
 
-  insert_play(PLAYER1, 1, 1, board);
-  if (insert_play(PLAYER1, 1, 1, board)) {
-    print_board(board);
+  } while (turn < 9);
+
+  if (turn == 0) {
+    std::cout << "WELL DONE, PLAYER" << player_turn << "! YOU WON!!!!\n\n";
   } else {
-    std::cout << "ERROR: that tile is already taken\n";
+    std::cout << "That was a tie! Well played.\nDo you want to play again?\n";
   }
-  
 
   return 0;
 }
