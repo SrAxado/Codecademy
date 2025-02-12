@@ -1,5 +1,5 @@
 # Codecademy
-Codecademy Projects - Javascript, C++
+Codecademy Projects - Javascript, C++, Python
 
 These are some code projects from the Codecademy's courses that I saved, either for future reference or because I found them interesting... that and probably because they demanded an extra bit of attention.
 
