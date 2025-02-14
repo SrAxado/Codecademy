@@ -89,4 +89,5 @@ message = "txm srom vkda gl lzlgzr qpdb? fepb ejac! ubr imn tapludwy mhfbz cza r
 keyword = "friends"
 
 vigenere_encode(test_message, test_keyword)
-vigenere_decode("ymlok cp fbb ejv", "friends")
+vigenere_decode("ymlok cp fbb ejv", "dog")
+vigenere_decode(message, keyword)
