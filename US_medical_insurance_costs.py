@@ -1,3 +1,7 @@
+#  This is the U.S. Medical Insurance Costs project 
+# from Codecademy's "Data Scientist Analytics" Carreer Path
+# (the dataset used is the Kaggle's version 1 dataset, downloaded 2025/02/18)
+# (https://www.kaggle.com/datasets/mirichoi0218/insurance/data)
 import csv
 
 ages = []
