@@ -1,16 +1,34 @@
 #include <iostream>
-#include "Restaurant.hpp"
-
+#include "FlightBooking.hpp"
 using namespace std;
-int main() {
-  // Initialize Restaurant with 2 tables
-  Restaurant restauranteChines = Restaurant(2);
 
-  // Create customers and make reservations
-  Customer zeDaEsquina = Customer("Zé da Esquina");
-  restauranteChines.reserveTable(zeDaEsquina&);
-  
-  // Release a table and demonstrate waitlist notification
+int main() {
+  // Creating an instance of FlightBooking class
+  FlightBooking booking1("FlightA", "John Doe");
+  FlightBooking booking2("FlightB", "Jane Smith");
+
+  booking1.bookFlight();
+  booking2.bookFlight();
+
+  booking1.showFlightDetails();
+  booking2.showFlightDetails();
+
+  // Show total bookings
+  FlightBooking::showTotalBookings();
+  FlightBooking::showTotalNumBookings();
+
+  // Demonstrating cancellation and use of const function
+  booking1.cancelFlight();
+  booking2.cancelFlight();
+
+  FlightBooking::showTotalBookings();
+  FlightBooking::showTotalNumBookings();
+
+  booking1.printHistory();
+  booking2.printHistory();
+
+  // Demonstrating auto keyword
+  booking1.demonstrateAuto();
 
   return 0;
 }
