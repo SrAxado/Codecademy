@@ -1,34 +1,33 @@
+#include "Library.hpp"
 #include <iostream>
-#include "FlightBooking.hpp"
+
 using namespace std;
 
+double libraryBudget;
+
 int main() {
-  // Creating an instance of FlightBooking class
-  FlightBooking booking1("FlightA", "John Doe");
-  FlightBooking booking2("FlightB", "Jane Smith");
+  //Library library1;
+  libraryBudget = 5000;
+  
+  cout << "Current library budget is: " << libraryBudget << endl;
 
-  booking1.bookFlight();
-  booking2.bookFlight();
+  Library myLibrary;
 
-  booking1.showFlightDetails();
-  booking2.showFlightDetails();
+  myLibrary.addBook("The Great Gatsby", 300);
+  myLibrary.addBook("1984", 400);
+  myLibrary.addBook("To Kill a Mockingbird", 350);
 
-  // Show total bookings
-  FlightBooking::showTotalBookings();
-  FlightBooking::showTotalNumBookings();
+  myLibrary.listBooks();
 
-  // Demonstrating cancellation and use of const function
-  booking1.cancelFlight();
-  booking2.cancelFlight();
+  myLibrary.reserveBook("1984");
+  myLibrary.borrowBook("To Kill a Mockingbird");
 
-  FlightBooking::showTotalBookings();
-  FlightBooking::showTotalNumBookings();
+  myLibrary.borrowBook("1984");
 
-  booking1.printHistory();
-  booking2.printHistory();
+  myLibrary.listBooks();
 
-  // Demonstrating auto keyword
-  booking1.demonstrateAuto();
+  cout << "The total number of borrowed books is: " << myLibrary.getTotalBorrowedBooks() << endl;
 
-  return 0;
+  cout << "The total number of reserved books is: " << myLibrary.getTotalReservedBooks() << endl;
+
 }
