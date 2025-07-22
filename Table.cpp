@@ -6,7 +6,7 @@ void Table::reserve() {
   isAvailable = false; 
 }
 void Table::release() { 
-  isAvailable = true; 
+  isAvailable = true;
 }
 bool Table::getIsAvailable() const { 
   return isAvailable; 
