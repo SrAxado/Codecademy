@@ -18,7 +18,7 @@ bool Restaurant::reserveTable(shared_ptr<Customer>& customer) {
     if (table->getIsAvailable()) {
       cout << "Table #" << table->getNumber() << " is available." << endl;
       customer->setTable(table->getNumber());
-      activeCostumers.push_back(customer);
+      activeCustomers.push_back(customer);
       table->reserve();
       cout << "Table #" << table->getNumber() << " reserved for customer: " << customer->getName() << endl << endl;
       return true;
@@ -43,22 +43,24 @@ void Restaurant::printWaitlist() const {
 
 void Restaurant::printActiveCustomersList() const{
   cout << "==> The following customers are currently seated:" << endl;
-  for (shared_ptr<Customer> customer : activeCostumers) {
+  for (shared_ptr<Customer> customer : activeCustomers) {
     cout << customer->getName() << " at Table #" << customer->getTable() << endl;
   }
   cout << endl;
 }
 
+// Releases the specified table and notifies the waitlist if needed
 void Restaurant::releaseTable(int tableNumber) {
   for (unique_ptr<Table>& table : restaurantTables) {
     if (table->getNumber() == tableNumber && !table->getIsAvailable()) {
-      cout << "----- Releasing table #" << tableNumber << " -----" << endl;
-      for (auto it = activeCostumers.begin(); it != activeCostumers.end(); ++it) {
+      cout << "----- Releasing Table #" << tableNumber << " -----" << endl;
+      // iterates through active customers to find the current customer's table to remove it from the active customers' list
+      for (auto it = activeCustomers.begin(); it != activeCustomers.end(); ++it) {
         shared_ptr<Customer> customerPtr = *it;
         cout << "---> " << customerPtr->getName() << " at Table #" << customerPtr->getTable() << endl;
         if (customerPtr && customerPtr->getTable() == tableNumber) {
           cout << "Releasing Table #" << tableNumber << " for customer: " << customerPtr->getName() << endl;
-          activeCostumers.erase(it);
+          activeCustomers.erase(it);
           // activeCostumers.erase((std::remove(activeCostumers.begin(), activeCostumers.end(), customerPtr), activeCostumers.end()));
           // customer->setTable(0); // Reset the customer's table number
           // removeElement(activeCostumers, customer); // Remove the customer from active customers
@@ -75,13 +77,17 @@ void Restaurant::releaseTable(int tableNumber) {
   }
 }
 
+// Notifies the first customer on the waitlist if a table becomes available
+// and reserves a table for them, removing them from the waitlist
 void Restaurant::notifyWaitlist() {
   if (waitlist.empty()) {
     return;
   } else {
     shared_ptr<Customer> customer = waitlist.front().lock();
-    cout << "The first one on the waitlist: " << customer->getName() << endl << endl;
-    reserveTable(customer);
-    removeElement(waitlist, customer);
+    if (customer) {
+      cout << "The first one on the waitlist: " << customer->getName() << endl << endl;
+      reserveTable(customer);
+      removeElement(waitlist, customer);
+    }
   }
 }

@@ -11,7 +11,7 @@ using namespace std;
 class Restaurant {
 private:
   vector<unique_ptr<Table>> restaurantTables;
-  vector<shared_ptr<Customer>> activeCostumers;
+  vector<shared_ptr<Customer>> activeCustomers;
   vector<weak_ptr<Customer>> waitlist;
 
   int initialTableCount;
