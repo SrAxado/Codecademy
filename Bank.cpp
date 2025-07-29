@@ -1,0 +1,37 @@
+#include "Bank.hpp"
+#include <iostream>
+
+BankAccount* Bank::findAccount(const string accountToFind) {
+  for (BankAccount& account : accounts) {
+    if (account.getAccountNumber() == accountToFind) {
+      return &account;
+    }
+  }
+  return nullptr;
+}
+
+void Bank::createAccount(const string accountNumber, const double balance) {
+  accounts.emplace_back(accountNumber, balance);
+  std::cout << "Account created: " << accountNumber << " with balance: " << balance << std::endl;
+}
+
+// the accountIDEmit and accountIDReceive are accounts from the vector<BankAccount>
+int Bank::transferMoney(const string accountIDEmit, const string accountIDReceive, const double amount) {
+  BankAccount* accountEmit = findAccount(accountIDEmit);  
+  BankAccount* accountReceive = findAccount(accountIDReceive);
+
+  if (accountEmit && accountReceive) {
+    BankAccount::Transaction transaction;
+    if (transaction.withdraw(accountEmit, amount)) {
+      if (transaction.deposit(accountReceive, amount)) {
+        return 1;
+      } else {
+        return 3;
+      }
+    } else {
+      return 3;
+    }
+  } else {
+    return 2;
+  }
+}
