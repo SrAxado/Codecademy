@@ -10,14 +10,15 @@ int main() {
   smallAndPoorBank.createAccount("1002", 3000);
   smallAndPoorBank.createAccount("1003", 2000);
 
-  BankAccount::Transaction bankTransaction;
+  //BankAccount::Transaction bankTransaction;
 
-  bankTransaction.deposit(smallAndPoorBank.findAccount("1001"), 1000);
-  bankTransaction.withdraw(smallAndPoorBank.findAccount("1002"), 500);
+  // bankTransaction.deposit(smallAndPoorBank.findAccount("1001"), 1000);
+  // bankTransaction.withdraw(smallAndPoorBank.findAccount("1002"), 500);
+
+  BankAccount::Transaction::deposit(smallAndPoorBank.findAccount("1001"), 1000);
+  BankAccount::Transaction::deposit(smallAndPoorBank.findAccount("1002"), 500);
 
   int result = smallAndPoorBank.transferMoney("1001", "1002", 1000);
-
-  // cout << "Transfer code: " << result << endl;
 
   switch (result) {
   case 1:

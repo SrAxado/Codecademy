@@ -1,6 +1,8 @@
 #include "Bank.hpp"
 #include <iostream>
 
+using namespace std;
+
 BankAccount* Bank::findAccount(const string accountToFind) {
   for (BankAccount& account : accounts) {
     if (account.getAccountNumber() == accountToFind) {
@@ -21,7 +23,7 @@ int Bank::transferMoney(const string accountIDEmit, const string accountIDReceiv
   BankAccount* accountReceive = findAccount(accountIDReceive);
 
   if (accountEmit && accountReceive) {
-    BankAccount::Transaction transaction;
+    BankAccount::Transaction transaction("coiso", 10);  // <---------------
     if (transaction.withdraw(accountEmit, amount)) {
       if (transaction.deposit(accountReceive, amount)) {
         return 1;
