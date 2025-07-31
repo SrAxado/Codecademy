@@ -1,5 +1,6 @@
 // #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ class BankAccount {
     void setBalance(const double amount);
     string printAccountNumber() const;
     void printAccountBalance() const;
+    void addTransaction(const string description, double amount);
     void printTransactions(int numTransactions) const;
 
     // Transaction class that will handle individual transactions, providing an additional layer of organization 
@@ -24,7 +26,7 @@ class BankAccount {
       public:
         Transaction(string description, double amount);
         static bool deposit(BankAccount* account, const double amount);
-        bool withdraw(BankAccount* account, const double amount);
+        static bool withdraw(BankAccount* account, const double amount);
         void printTransaction() const;
     };
     

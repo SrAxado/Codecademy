@@ -37,3 +37,15 @@ int Bank::transferMoney(const string accountIDEmit, const string accountIDReceiv
     return 2;
   }
 }
+
+void Bank::deposit(const string accountNumber, const double amount) {
+  BankAccount* account = this->findAccount(accountNumber);
+
+  BankAccount::Transaction::deposit(account, amount);
+}
+
+void Bank::withdraw(const string accountNumber, const double amount) {
+  BankAccount* account = this->findAccount(accountNumber);
+
+  BankAccount::Transaction::withdraw(account, amount);
+}
