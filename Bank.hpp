@@ -1,14 +1,14 @@
-#include <vector>
 #include "BankAccount.hpp"
+#include <vector>
 
 class Bank {
   private:
-    vector<BankAccount> accounts;
+    std::vector<BankAccount> accounts;
   
   public:
-    void createAccount(const string accountNumber, const double balance);
-    BankAccount* findAccount(const string account);
-    int transferMoney(const string account1, const string account2, const double amount);
-    void deposit(const string accountNumber, const double amount);
-    void withdraw(const string accountNumber, const double amount);
+    void createAccount(const std::string& accountNumber, const double balance);
+    BankAccount* findAccount(const std::string& account);
+    int transferMoney(const std::string& account1, const std::string& account2, const double amount);
+    void deposit(const std::string& accountNumber, const double amount);
+    void withdraw(const std::string& accountNumber, const double amount);
 };

@@ -1,37 +1,34 @@
-// #include <string>
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 class BankAccount {
   public:
-    BankAccount(string accountNumber, double balance);
+    BankAccount(const std::string& accountNumber, const double amount);
     std::string getAccountNumber() const;
     double getBalance() const;
-    void setAccountNumber(const string& accountNum);
+    void setAccountNumber(const std::string& accountNum);
     void setBalance(const double amount);
-    string printAccountNumber() const;
+    std::string printAccountNumber() const;
     void printAccountBalance() const;
-    void addTransaction(const string description, double amount);
-    void printTransactions(int numTransactions) const;
+    void addTransaction(const std::string& description, const double amount);
+    void printTransactions(const int numTransactions) const;
 
     // Transaction class that will handle individual transactions, providing an additional layer of organization 
   // for transaction-related operations.
     class Transaction {
       private:
-        string description_;
+        std::string description_;
         double amount_;
         
       public:
-        Transaction(string description, double amount);
+        Transaction(const std::string& description, const double amount);
         static bool deposit(BankAccount* account, const double amount);
         static bool withdraw(BankAccount* account, const double amount);
         void printTransaction() const;
     };
     
     private:
-      string accountNumber;
-      double balance;
-      vector<Transaction> transactions;
+      std::string accountNumber_;
+      double balance_;
+      std::vector<Transaction> transactions_;
 };
