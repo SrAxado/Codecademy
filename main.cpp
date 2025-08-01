@@ -39,7 +39,7 @@ int main() {
     break;
   }
 
-  smallAndPoorBank.findAccount("1001")->printTransactions(1);
+  smallAndPoorBank.findAccount("1002")->printTransactions(3);
  
   
   return 0;

@@ -14,7 +14,7 @@ BankAccount* Bank::findAccount(const string accountToFind) {
 
 void Bank::createAccount(const string accountNumber, const double balance) {
   accounts.emplace_back(accountNumber, balance);
-  std::cout << "Account created: " << accountNumber << " with balance: " << balance << std::endl;
+  cout << "Account created: [" << accountNumber << "] with balance: " << balance << endl;
 }
 
 // the accountIDEmit and accountIDReceive are accounts from the vector<BankAccount>
@@ -23,9 +23,12 @@ int Bank::transferMoney(const string accountIDEmit, const string accountIDReceiv
   BankAccount* accountReceive = findAccount(accountIDReceive);
 
   if (accountEmit && accountReceive) {
-    BankAccount::Transaction transaction("coiso", 10);  // <---------------
-    if (transaction.withdraw(accountEmit, amount)) {
-      if (transaction.deposit(accountReceive, amount)) {
+    cout << endl << endl << " ==> Money Transfer initiated <==" << endl;
+    // BankAccount::Transaction transaction("coiso", 10);  // <---------------
+    // if (transaction.withdraw(accountEmit, amount)) {
+    //   if (transaction.deposit(accountReceive, amount)) {
+    if (BankAccount::Transaction::withdraw(accountEmit, amount)) {
+      if (BankAccount::Transaction::deposit(accountReceive, amount)) {
         return 1;
       } else {
         return 3;
