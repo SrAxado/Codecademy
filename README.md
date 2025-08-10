@@ -1,19 +1,29 @@
+FUSION KITCHEN
 
-THE SECURE BANKING SYSTEM
+Imagine that you’re designing a system to manage different types of restaurants. You notice that all restaurants share some basic features - they all have a name, an address, and they all serve some kind of food. However, each type of restaurant also has its unique characteristics. A Mexican restaurant might have a spice level rating, while a Japanese restaurant might have a traditional seating style.
 
-In this project, you’ll build a basic banking system in C++ that uses encapsulation to manage account data. You’ll 
-create a BankAccount class to store account details and manage how the data is accessed and changed, ensuring proper 
-behaviour and efficient handling of account operations. Users interact with the account only through carefully designed 
-methods, just as you interact with your bank account through an ATM or online banking platform.
+In this project, we’ll use inheritance in C++ to model these relationships. We’ll start with a base Restaurant class that contains the common features all restaurants share. Then, we’ll create specialized restaurant classes for different cuisines using a single inheritance. Finally, we’ll explore the exciting world of fusion cuisine by creating a Mexican-Japanese fusion restaurant using multiple inheritance!
 
-BankAccount class: This class will store data like account numbers and balances as private members. It will also include 
-transaction methods such as deposits, withdrawals, and balance inquiries.
+Think of it like a family tree:
 
-Transaction class: This class will handle individual transactions, like deposits and withdrawals, within the BankAccount.
+    -- The Restaurant class is the parent, containing all the basic features.
+    -- Specific restaurant types (Mexican, Japanese) are children, inheriting these basic features while adding their own unique traits.
+    -- The fusion restaurant is like a child of both Mexican and Japanese restaurants, combining features from both cuisines!
 
-Bank class: This class will act as the overall manager of multiple BankAccount objects. It will be responsible for 
-managing account creation, tracking balances, and securely handling transfers between accounts.
+Through this project, you’ll practice how to:
 
-By the end of this project, you will have built an encapsulated banking system in which each class and method plays 
-a defined role. We aim to keep the data well-organized and only accessible through proper channels, ensuring efficiency 
-and security while adhering to good design principles.
+    -- create a base class with common functionality
+    -- use single inheritance to create specialized restaurant types
+    -- implement multiple inheritance to create a fusion restaurant
+    -- manage restaurant-specific features and menus
+
+The source code for this project will be organized into the following files:
+
+    -- Restaurant base class: Restaurant.hpp and Restaurant.cpp
+    -- MenuItem class: MenuItem.hpp and MenuItem.cpp
+    -- MexicanRestaurant class: MexicanRestaurant.hpp and MexicanRestaurant.cpp
+    -- JapaneseRestaurant class: JapaneseRestaurant.hpp and JapaneseRestaurant.cpp
+    -- MexicanJapaneseRestaurant class: MexicanJapaneseRestaurant.hpp and MexicanJapaneseRestaurant.cpp
+
+
+
