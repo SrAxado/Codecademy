@@ -3,7 +3,14 @@
 
 #include "Restaurant.hpp"
 
-class JapaneseRestaurant {
+class JapaneseRestaurant : public Restaurant {
+  public:
+    using Restaurant::Restaurant;
+    JapaneseRestaurant(string const name, string const addr, bool const tatamiAvailable);
+    void describeCuisine() const;
+
+  private:
+    bool hasTatami;
 };
 
 #endif
