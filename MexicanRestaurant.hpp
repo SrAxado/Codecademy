@@ -3,11 +3,12 @@
 
 #include "Restaurant.hpp"
 
-class MexicanRestaurant : public Restaurant {
+class MexicanRestaurant : virtual public Restaurant {
   public:
     using Restaurant::Restaurant;
-    MexicanRestaurant(string const nme, string const addr, int const spceLevel);
+    MexicanRestaurant(string const name, string const addr, int const spceLevel);
     void describeCuisine() const;
+    void removeLastMenuItem(); // not useful -- just to prove menu's protected visibility use
 
   private:
     int spiceLevel;

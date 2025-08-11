@@ -3,7 +3,7 @@
 
 #include "Restaurant.hpp"
 
-class JapaneseRestaurant : public Restaurant {
+class JapaneseRestaurant : virtual public Restaurant {
   public:
     using Restaurant::Restaurant;
     JapaneseRestaurant(string const name, string const addr, bool const tatamiAvailable);

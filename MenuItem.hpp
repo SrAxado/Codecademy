@@ -5,7 +5,13 @@
 using namespace std;
 
 class MenuItem {
- 
+  public:
+    MenuItem(string const itemName, double const itemPrice);
+    void display() const;
+
+  private:
+    string name;
+    double price;
 };
 
 #endif
