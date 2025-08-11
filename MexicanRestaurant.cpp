@@ -16,12 +16,14 @@ MexicanRestaurant::MexicanRestaurant(string const name, string const addr, int c
 
 // overrides inherited desbribeCuisine() to Mexican food
 void MexicanRestaurant::describeCuisine() const {
-  cout << "Authentic Mexican cuisine with spice level " << spiceLevel << " out of 5" << endl;
+  cout << "Authentic Mexican cuisine with spice level " << spiceLevel << " out of 5." << endl;
 }
 
 // not useful -- just to prove menu's protected visibility use
 void MexicanRestaurant::removeLastMenuItem() {
-  cout << "Removing ";
-  menu[menu.size() - 1].display();
-  menu.pop_back();
+  if (!menu.empty()) {
+    cout << "Removing ";
+    menu.back().display();
+    menu.pop_back();
+  }
 }

@@ -5,6 +5,8 @@
 #include "JapaneseRestaurant.hpp"
 #include "Restaurant.hpp"
 
+// represents a mixed fusion of restaurant several specific restaurants;
+// by having made the "fusioned" restaurant types virtually inherited the base Restaurant one can access all of the inherited methods unambiguously
 class MexicanJapaneseFusion : public MexicanRestaurant, public JapaneseRestaurant {
   public:
     using MexicanRestaurant::MexicanRestaurant, JapaneseRestaurant::JapaneseRestaurant;

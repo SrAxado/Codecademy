@@ -3,6 +3,8 @@
 
 #include "Restaurant.hpp"
 
+// represents a specific kind of restaurant, Japanese; 
+// inheriting Restaurant virtually to avoid the diamond problem with later inheritances
 class JapaneseRestaurant : virtual public Restaurant {
   public:
     using Restaurant::Restaurant;

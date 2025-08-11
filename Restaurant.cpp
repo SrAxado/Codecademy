@@ -17,7 +17,7 @@ void Restaurant::addMenuItem(MenuItem item) {
 
 void Restaurant::displayMenu() const {
   cout << "  --- " << name << "'s Menu ---" << endl;
-  for (MenuItem item : menu) {
+  for (const MenuItem& item : menu) {  // to avoid unnecessary copying of the MenuItem object
     cout << "    ";
     item.display();
   }
@@ -26,7 +26,9 @@ void Restaurant::displayMenu() const {
 
 // not useful -- just to prove menu's protected visibility use
 void Restaurant::removeLastMenuItem() {
-  cout << "Removing ";
-  menu[menu.size() - 1].display();
-  menu.pop_back();
+  if (!menu.empty()) {
+    cout << "Easily removing ";
+    menu.back().display();
+    menu.pop_back();
+  }
 }

@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+// represents a single menu item with a name and a price
 class MenuItem {
   public:
     MenuItem(string const itemName, double const itemPrice);
