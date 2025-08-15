@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character(const string name = "Elden King", const int health = 100, const int power = 10)
+Character::Character(const string name, const int health, const int power)
   : name(name), health(health), power(power) {}
 
 void Character::attack() {

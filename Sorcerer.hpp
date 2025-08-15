@@ -10,6 +10,6 @@ class Sorcerer: public Character {
 
   private:
 
-}
+};
 
 #endif 

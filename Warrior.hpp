@@ -11,6 +11,6 @@ class Warrior: public Character {
 
   private:
 
-}
+};
 
 #endif 

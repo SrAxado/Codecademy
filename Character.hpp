@@ -8,7 +8,7 @@ using namespace std;
 
 class Character {
   public:
-    Character(const string name, const int health, const int power);
+    Character(const string name = "Elder King", const int health = 100, const int power = 50);
     virtual void attack();
     virtual void displayInfo();
 
@@ -16,6 +16,6 @@ class Character {
     string name;
     int health;
     int power;
-}
+};
 
 #endif 
