@@ -15,13 +15,13 @@ int main() {
   characters.push_back(new Sorcerer("Loki", 90, 17));
   characters.push_back(new Sorcerer("Scarlet Witch", 105, 20));
   
-  // Displaying their habilities and information
+  // Display the character abilities and information
   for (Character* character : characters) {
     character->attack();
     character->displayInfo();
   }
 
-  // Enabling access to the Warrior's special attack
+  // Create a Warrior and use dynamic_cast to access specialAttack()
   Character* characterPtr = new Warrior("Captain America", 110, 19);
   Warrior* warriorPtr = dynamic_cast<Warrior*>(characterPtr);
   if (warriorPtr != nullptr) {
@@ -30,7 +30,7 @@ int main() {
     cout << "The character is not a Warrior!" << endl;
   }
 
-  // Verifying if one character is a Warrior or not
+  // Verify if a character from the character's vector is a Warrior or not
   Warrior* fighter = dynamic_cast<Warrior*>(characters[4]);
   if (fighter != nullptr) {
     fighter->specialAttack();
@@ -38,12 +38,16 @@ int main() {
     cout << "The fighter is not a Warrior!" << endl;
   }
 
-  // Cleanning up all the allocated memory and all the dynamically allocated characters
-  delete characterPtr, warriorPtr;;
+  // Cleaning up all the allocated memory and all the dynamically allocated characters
+  delete characterPtr;
   for (Character* character : characters) {
     delete character;
   }
-  delete fighter;
+  // Suggestion: Do not delete pointers that were not allocated with new 
+  //(e.g., 'warriorPtr' and 'fighter' in main.cpp). 
+  // Only delete what you explicitly new'd.
+  
+  // No need to delete warriorPtr or fighter, as they are not separately allocated.
   
   return 0;
 }

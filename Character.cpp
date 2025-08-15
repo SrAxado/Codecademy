@@ -9,12 +9,12 @@ int Character::getHealth() const { return health; }
 
 int Character::getPower() const { return power; }
 
-// Defining the default attack
+// Define the default attack
 void Character::attack() {
   cout << "Basic Low Attack" << endl;
 }
 
-// Displaying the character's information
+// Display the character's information
 void Character::displayInfo() {
   cout << "Name: " << name << ", Health: " << health << ", Power: " << power << endl;
 }
