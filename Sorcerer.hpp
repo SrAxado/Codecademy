@@ -3,13 +3,11 @@
 
 #include "Character.hpp"
 
+// Defining the Sorcerer
 class Sorcerer: public Character {
   public:
     Sorcerer(const string name, const int health, const int power);
-    void attack() override;    
-
-  private:
-
+    void attack() override;
 };
 
 #endif 
