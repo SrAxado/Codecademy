@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 .vs
 .vscode
-=======
-.vscode
 .DS_Store
->>>>>>> 6de552096dd3539ea9b45751824e21f3a5d41114
+*.o
+*.out
+*.exe
