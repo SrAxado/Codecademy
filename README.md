@@ -5,19 +5,19 @@ These are some code projects from the Codecademy's "Learn C++" course that I sav
 
 You'll also be able to find the longer projects isolated, within their own branch:
 
-  -- Flight Booking;<br />
-  -- Restaurant Reservations;<br />
-  -- Library Management System;<br />
-  -- Fusion Kitchen;<br />
-  -- Epic Duel;<br />
-  -- The Secure Banking System;<br />  
-  -- School Management System.<br />
-<br />
-<br />
+  -- Flight Booking;    
+  -- Restaurant Reservations;   
+  -- Library Management System; 
+  -- Fusion Kitchen;    
+  -- Epic Duel; 
+  -- The Secure Banking System; 
+  -- School Management System.  
+&nbsp;
+&nbsp;
 Hope they either help you or you enjoy them!!
-<br />
-<br />
-<br />
+&nbsp;
+&nbsp;
+&nbsp;
 ---
 P.S.: I know that this is not the way one should use github repositories, but I decided to use the branchs as a way to separate the languages and projects.
 
