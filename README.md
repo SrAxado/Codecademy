@@ -1,21 +1,11 @@
 # Codecademy
 Codecademy Projects - C++
 
-These are some code projects from the Codecademy's "Learn C++" course that I saved, either for future reference or because I found them interesting... that and because probably they demanded an extra bit of attention.
-
-You'll also be able to find the longer projects isolated, within their own branch:
-- Flight Booking;  
-- Restaurant Reservations;  
-- Library Management System;  
-- Fusion Kitchen;  
-- Epic Duel;  
-- The Secure Banking System;  
-- School Management System.  
-
-
+Digital Art Gallery
 &nbsp;
 
-Hope they either help you or you enjoy them!!
+In this project, we set to create a simple Digital Art Gallery using C++.
+It will help manage different types of artworks such as paintings, sculptures, and digital pieces, while introducing key C++ concepts like constructors through the process of designing and handling art objects.
 &nbsp;
 
 &nbsp;

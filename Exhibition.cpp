@@ -1,6 +1,17 @@
 #include "Exhibition.hpp"
 #include <iostream>
 
+// parameterized constructor
+Exhibition::Exhibition(const std::string& exhibitionName, Artwork* art)
+    : name(exhibitionName) {
+      if (art != nullptr) {
+        featuredArtworks.push_back(art);
+      }
+    }
+
+// parameterized artwork constructor, delegating to main constructor
+Exhibition::Exhibition(Artwork* art) : Exhibition("Untitled", art) {}
+
 void Exhibition::addToExhibition(Artwork* art) {
   featuredArtworks.push_back(art);
 }
