@@ -38,6 +38,7 @@ int main() {
     return -1;  // exiting with error code
   }
 
+  std::cout << "Shutting down the factory for the day" << std::endl;
 
   return 0;
 }
@@ -63,14 +64,14 @@ int main() {
     DeliveryRobot is delivering
     Delivery done
     -- DeliveryBot 2 --
-    Robot Control Center Error: Battery too low to perform the delivery task.
+    Robot Control Center Error: Battery -- Battery too low to perform the delivery task.
     DeliveryRobot is being recharged
     DeliveryRobot recharged: 40%
     -- MaintenanceBot 1 --
     MaintenanceRobot is performing maintenance
     Maintenance done
     -- MaintenanceBot 2 --
-    Robot Control Center Error: Mechanical integrity too low to perform the maintenance task.
+    Robot Control Center Error: Mechanical Failure -- Mechanical integrity too low to perform the maintenance task.
     MaintenanceRobot is being repaired
     MaintenanceRobot repaired: 30%
     -- CookingBot 1 --
@@ -103,7 +104,7 @@ int main() {
     MaintenanceRobot is performing maintenance
     Maintenance done
     -- MaintenanceBot 2 --
-    Robot Control Center Error: Mechanical integrity too low to perform the maintenance task.
+    Robot Control Center Error: Mechanical Failure -- Mechanical integrity too low to perform the maintenance task.
     MaintenanceRobot is being repaired
     MaintenanceRobot repaired: 25%
     -- CookingBot 1 --
@@ -115,5 +116,6 @@ int main() {
     MaintenanceBot 1 completed 3 tasks.
     MaintenanceBot 2 completed 1 tasks.
     CookingBot 1 completed 3 tasks.
+    Shutting down the factory for the day
 
 */

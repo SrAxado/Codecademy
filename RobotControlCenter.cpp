@@ -3,7 +3,7 @@
 
 // Robot Control Center constructor
 RobotControlCenter::RobotControlCenter(int centerCapacity) {
-  if (capacity < 0) {
+  if (centerCapacity < 0) {
     throw RobotException("The capacity of the center cannot be negative.");
   } else {
     capacity = centerCapacity;
@@ -33,10 +33,15 @@ void RobotControlCenter::addRobot(Robot* robot) {
 }
 
 // Executes tasks for all robots in the Robot Control Center
+// Handles exceptions for each robot task
 void RobotControlCenter::executeAllRobotTasks() {
   for (Robot* robot : robotCollection) {
     try {
       robot->performTask();
+    }
+    catch (const BatteryLowException& e) {
+      logError(e.what());
+      robot->repair();
     }
     catch (const MechanicalFailureException& e) {
       logError(e.what());
@@ -53,6 +58,38 @@ void RobotControlCenter::executeAllRobotTasks() {
       throw;  // Rethrow to indicate failure
     }
   }
+
+  /*
+  -- code review's suggestion --
+
+  // Consider adding a retry mechanism or status flag to avoid infinite repair/fail cycles
+  for (Robot* robot : robotCollection) {
+    int retries = 0;
+    const int maxRetries = 3;
+    while (retries < maxRetries) {
+      try {
+        robot->performTask();
+        break;
+      } catch (const BatteryLowException& e) {
+        logError(e.what());
+        robot->repair();
+        ++retries;
+      } catch (const MechanicalFailureException& e) {
+        logError(e.what());
+        robot->repair();
+        ++retries;
+      } catch (const RobotException& e) {
+        logError(e.what());
+        robot->repair();
+        ++retries;
+      } catch (...) {
+        logError("Unknown robot error");
+        throw;
+      }
+    }
+  }
+  */
+
 }
 
 // Logs all robots' completed tasks

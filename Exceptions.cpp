@@ -5,10 +5,10 @@ const char* RobotException::what() const noexcept {
 }
 
 BatteryLowException::BatteryLowException(const std::string& message) 
-  : RobotException(message) {}
+  : RobotException("Battery -- " + message) {}
 
 MechanicalFailureException::MechanicalFailureException(const std::string& message) 
-  : RobotException(message) {}
+  : RobotException("Mechanical Failure -- " + message) {}
 
 RobotControlCenterException::RobotControlCenterException(const std::string& message)
-  : RobotException(message) {}
+  : RobotException("Robot Control Center -- " + message) {}
