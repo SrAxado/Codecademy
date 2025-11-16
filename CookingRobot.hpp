@@ -1,22 +1,22 @@
-#ifndef DELIVERY_ROBOT_HPP
-#define DELIVERY_ROBOT_HPP
+#ifndef COOKING_ROBOT_HPP
+#define COOKING_ROBOT_HPP
 
 #include "Robot.hpp"
 #include "Exceptions.hpp"
 #include <iostream>
 
 // Base class for robots specialised in deliveries
-class DeliveryRobot : public Robot {
+class CookingRobot : public Robot {
   private:
     int batteryLevel;
 
   public:
-    DeliveryRobot(const std::string& name, int initialBatteryLevel);
-    // Performs the delivery task
+    CookingRobot(const std::string& name, int initialBatteryLevel);
+    // Performs the cooking task
     void performTask() override;
     // Recharges partially the robot's battery
     void repair() override;
 };
 
 
-#endif // DELIVERY_ROBOT_HPP
+#endif // COOKING_ROBOT_HPP
