@@ -1,11 +1,10 @@
 # Codecademy
 Codecademy Projects - C++
 
-Digital Art Gallery
+Robotics Control System
 &nbsp;
 
-In this project, we set to create a simple Digital Art Gallery using C++.
-It will help manage different types of artworks such as paintings, sculptures, and digital pieces, while introducing key C++ concepts like constructors through the process of designing and handling art objects.
+A cutting-edge robot factory is prone to occasional malfunctions—some run low on battery, others break down from mechanical strain. You’ve been hired to create a system that gracefully handles these errors! By the end of this project, you’ll have a suite of robots, a central command to manage them, and robust exception handling so the factory can keep rolling.
 &nbsp;
 
 &nbsp;
