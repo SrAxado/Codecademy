@@ -1,5 +1,3 @@
-using namespace std;
-
 // Defines PLATFORM based on the operating system
 #ifdef _WIN32
   #define PLATFORM "Windows"
@@ -12,7 +10,9 @@ using namespace std;
   #error "This platform is not supported."
 #endif
 
+// Macro for chrono time_point
 #define TIME_POINT chrono::high_resolution_clock::time_point
+// Macro for current time
 #define NOW chrono::high_resolution_clock::now()
 
 // Calculates duration in microseconds between two time points
