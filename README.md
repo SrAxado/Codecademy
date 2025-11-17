@@ -1,10 +1,14 @@
 # Codecademy
 Codecademy Projects - C++
 
-Robotics Control System
+Cross Platform Debugger
 &nbsp;
 
-A cutting-edge robot factory is prone to occasional malfunctions—some run low on battery, others break down from mechanical strain. You’ve been hired to create a system that gracefully handles these errors! By the end of this project, you’ll have a suite of robots, a central command to manage them, and robust exception handling so the factory can keep rolling.
+You’re developing a cross-platform tool for developers who need to debug and profile their C++ programs efficiently. Whether it’s Windows, Linux, or macOS, this utility adapts seamlessly.
+&nbsp;
+By the end of this project, you’ll have a system that logs compile-time information, detects the operating system, measures how long your functions take, and indicates whether you’re in debug mode, all utilizing modern, clean C++ code.
+
+
 &nbsp;
 
 &nbsp;
