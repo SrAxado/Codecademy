@@ -1,11 +1,12 @@
 # Codecademy
 Codecademy Projects - C++
 
-Master the Palette
+Cross Platform Debugger
 &nbsp;
 
-You’ve joined the Palette++ development team, where the existing Color class already handles RGB values and hex codes. Now designers want to work with colors using natural C++ operations. Your task is to overload the necessary operators so users can blend colors with +, brighten them with ++, scale their intensity with *, and compare them easily. After each operation, the RGB channels must always remain within the valid 0–255 range.
-
+You’re developing a cross-platform tool for developers who need to debug and profile their C++ programs efficiently. Whether it’s Windows, Linux, or macOS, this utility adapts seamlessly.
+&nbsp;
+By the end of this project, you’ll have a system that logs compile-time information, detects the operating system, measures how long your functions take, and indicates whether you’re in debug mode, all utilizing modern, clean C++ code.
 
 
 &nbsp;
