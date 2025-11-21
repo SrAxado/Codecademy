@@ -22,7 +22,7 @@ public:
 
   // + operator overload that averages each channel of the two colors, returning such Color
   Color operator+(const Color& color2) const;
-  // Corresponding += operator overload
+  // Adds adjustments to each channel, clamping to 0 - 255
   Color& operator+=(const Color& color2);
   // + operator overload that varies the RGB values by a vector of adjustments
   Color operator+(const std::vector<int>& adjustments) const;

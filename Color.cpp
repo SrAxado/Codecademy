@@ -64,7 +64,7 @@ const int Color::operator[](int index) const {
   Color Color::operator+(const Color& color2) const {
     return Color((redChannel + color2.red())/2, (greenChannel + color2.green())/2, (blueChannel + color2.blue())/2);
   }
-  // Corresponding += operator overload
+  // Adds adjustments to each channel, clamping to 0 - 255
   Color& Color::operator+=(const Color& color2) {
     redChannel = CLIP((redChannel + color2.red()) / 2);
     greenChannel = CLIP((greenChannel + color2.green()) / 2);
@@ -165,7 +165,7 @@ const int Color::operator[](int index) const {
   }
 
   bool Color::operator!=(const Color& color2) const {
-    return ((redChannel != color2.red()) and (greenChannel != color2.green()) and (blueChannel != color2.blue()));
+    return ((redChannel != color2.red()) or (greenChannel != color2.green()) or (blueChannel != color2.blue()));
   }
 
   std::string Color::operator<(const Color& color2) const {
@@ -189,12 +189,12 @@ const int Color::operator[](int index) const {
   }
 
 
-  // Functor
+  // Functor operator
   Color Color::operator()(int (*transform)(int)) const {
     int newRed = CLIP(transform(redChannel));
     int newGreen = CLIP(transform(greenChannel));
-    int newblue = CLIP(transform(blueChannel));
-    return Color(newRed, newGreen, newblue);
+    int newBlue = CLIP(transform(blueChannel));
+    return Color(newRed, newGreen, newBlue);
   }
 
 std::ostream& operator<<(std::ostream& os, const Color& color) {
