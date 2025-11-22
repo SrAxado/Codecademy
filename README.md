@@ -1,10 +1,10 @@
 # Codecademy
 Codecademy Projects - C++
 
-Master the Palette
+Scripting the World
 &nbsp;
 
-You’ve joined the Palette++ development team, where the existing Color class already handles RGB values and hex codes. Now designers want to work with colors using natural C++ operations. Your task is to overload the necessary operators so users can blend colors with +, brighten them with ++, scale their intensity with *, and compare them easily. After each operation, the RGB channels must always remain within the valid 0–255 range.
+A game engine for 2D games centers on a well-structured GameObject class, designed to store essential character data such as name, health, position, and animation state, all kept private for clean architecture. Rather than making this data public, specific friend functions and classes are used to allow only trusted systems—like scripting engines or debugging tools—to access and modify these internals directly. This approach maintains encapsulation while enabling flexible interactions, facilitating a powerful yet safe simulation. The engine also features operator overloading to make code more intuitive, closely mimicking the behavior of professional game development tools.
 
 
 
