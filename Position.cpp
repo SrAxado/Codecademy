@@ -2,4 +2,8 @@
 
 Position::Position(float xVal, float yVal) : x(xVal), y(yVal) {}
 
-bool Position::operator==(const GameO)
+/* 
+bool Position::operator==(const GameObject& obj) const {
+  return ((x == obj.x) && (y == obj.y));
+} 
+*/
