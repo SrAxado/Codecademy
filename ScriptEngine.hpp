@@ -10,5 +10,5 @@ public:
   static void performAttack(Enemy& attacker, GameObject& obj);
 
 private:
-  static bool checkAttackReach(Enemy& attacker, GameObject& obj);
+  static bool checkAttackReach(const Enemy& attacker, const GameObject& obj);
 };

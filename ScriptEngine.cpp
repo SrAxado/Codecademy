@@ -4,9 +4,9 @@ using namespace std;
 
 // Teleports the obj to a (newX, newY) position and prints the action
 void ScriptEngine::teleport(GameObject& obj, float newX, float newY) {
-  // obj.x = newX;
-  // obj.y = newY;
-  obj.move(newX, newY);
+  obj.x = newX;
+  obj.y = newY;
+  obj.move(newX, newY); // The move method in GameObject is private and only adds deltas
   std::cout << "[ScriptEngine] Teleported " << obj.name << " to (" << newX << ", " << newY << ") " << std::endl;
 }
 
@@ -37,7 +37,7 @@ void ScriptEngine::performAttack(Enemy& attacker, GameObject& obj) {
 }
 
 // Helper function to determine if the object if within reach of the attacker range
-bool ScriptEngine::checkAttackReach(Enemy& attacker, GameObject& obj) {
+bool ScriptEngine::checkAttackReach(const Enemy& attacker, const GameObject& obj) {
   // checks if obj is within range of the attacker, considering their position and radius of attack of the attacker
   return (obj.x - attacker.x)*(obj.x - attacker.x) + (obj.y - attacker.y)*(obj.y - attacker.y) <= attacker.aggroRadius * attacker.aggroRadius;
 }
